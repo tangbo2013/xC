@@ -1,13 +1,10 @@
 /**
- * 通用平台系统API
- * Copyright (c) 2011 Tiros.
- * @file file.h
+ * xC
+ * @file xfile.h
  * @brief 文件
- * @author wangzg <wangzg@tiros.com.cn>
- * @date 2011/06/10
- * @note 不要直接调用tr_函数,应该调用对应的宏定义
+ * @author yangxq <yangxq@tiros.com.cn>
+ * @date 2014/03/13
  * @par 修改记录
- * @par 修改命名规则 杨小茜 2014/03/12
  */
 
 #ifndef _XFILE_H_
@@ -54,10 +51,10 @@ typedef struct _FileEnum xFileEnum_t;
  */
 typedef enum _OpenFileMode
 {
-    OFM_READ,          ///< 只读
-    OFM_READWRITE,     ///< 读写
-    OFM_APPEND,        ///< 追加
-    OFM_CREATE         ///< 创建
+    XOFM_READ,          ///< 只读
+    XOFM_READWRITE,     ///< 读写
+    XOFM_APPEND,        ///< 追加
+    XOFM_CREATE         ///< 创建
 } xOpenFileMode_t;
 
 /**
@@ -65,10 +62,10 @@ typedef enum _OpenFileMode
  */
 typedef enum _FileSeekType
 {
-    FST_START,         ///< 文件开头
-    FST_END,           ///< 文件结尾
-    FST_CURRENT_DOWN,  ///< 当前位置向下
-    FST_CURRENT_UP     ///< 当前位置向上
+    XFST_START,         ///< 文件开头
+    XFST_END,           ///< 文件结尾
+    XFST_CURRENT_DOWN,  ///< 当前位置向下
+    XFST_CURRENT_UP     ///< 当前位置向上
 } xFileSeekType_t;
 
 #ifdef __cplusplus

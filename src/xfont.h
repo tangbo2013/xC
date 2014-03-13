@@ -1,14 +1,10 @@
 /**
- * 通用平台系统API
- * Copyright (c) 2011 Tiros.
- * @file font.h
+ * xC
+ * @file xfont.h
  * @brief 字体
- * @author baigb <baigb@tiros.com.cn>
- * @date 2011/09/16
- * @note 不要直接调用tr_函数,应该调用对应的宏定义
+ * @author yangxq <yangxq@tiros.com.cn>
+ * @date 2014/03/13
  * @par 修改记录
- * @par 扩展字体样式至10种  魏俊 2012.08.27
- * @par 修改命名规则 杨小茜 2014.03.12
  */
 
 #ifndef _XFONT_H_
@@ -29,16 +25,16 @@ typedef struct _Font xFont_t;
  */
 typedef enum _FontStyle
 {
-    FS_MAP_1 = 100,                        ///<  标准字体大小:地图最大字体36
-    FS_MAP_2,                              ///<  标准字体大小:
-    FS_MAP_3,                              ///<  标准字体大小:
-    FS_MAP_4,                              ///<  标准字体大小:
-    FS_MAP_5,                              ///<  标准字体大小:
-    FS_MAP_6,                              ///<  标准字体大小:
-    FS_MAP_7,                              ///<  标准字体大小:
-    FS_MAP_8,                              ///<  标准字体大小:
-    FS_MAP_9,                              ///<  标准字体大小:
-    FS_MAP_10                              ///<  标准字体大小:
+    XFS_MAP_1 = 100,                        ///<  标准字体大小:地图最大字体36
+    XFS_MAP_2,                              ///<  标准字体大小:
+    XFS_MAP_3,                              ///<  标准字体大小:
+    XFS_MAP_4,                              ///<  标准字体大小:
+    XFS_MAP_5,                              ///<  标准字体大小:
+    XFS_MAP_6,                              ///<  标准字体大小:
+    XFS_MAP_7,                              ///<  标准字体大小:
+    XFS_MAP_8,                              ///<  标准字体大小:
+    XFS_MAP_9,                              ///<  标准字体大小:
+    XFS_MAP_10                              ///<  标准字体大小:
 } xFontStyle_t;
 
 #ifdef __cplusplus
@@ -78,7 +74,7 @@ void xfont_setstyle(xFont_t * pft, xFontStyle_t fst);
  * @param[in] r,g,b - 绘制字体颜色
  * @return - 无
  */
-void xfont_drawtext(xFont_t * pft, xImage* pimg, xint16_t x, xint16_t y, const wchar * pwszText, xuint32_t nChars, xuint8_t r, xuint8_t g, xuint8_t b);
+void xfont_drawtext(xFont_t * pft, xImage* pimg, xint16_t x, xint16_t y, const xwchar_t * pwszText, xuint32_t nChars, xuint8_t r, xuint8_t g, xuint8_t b);
 
 /**
  * @brief 获取字体大小
@@ -103,7 +99,7 @@ xuint16_t xfont_getheight(xFont_t * pft);
  * @param[out] pnFits - 给定可用宽度的屏幕中可以容纳的字符数,该参数可以为空,空值表示不需要传出该值
  * @return - 可用空间中可以容纳的文本字符串总宽度(以像素为单位)
  */
-xuint16_t xfont_measuretext(xFont_t * pft, const wchar * pwszText, xuint32_t nChars, xuint16_t nMaxWidth, xuint32_t * pnFits);
+xuint16_t xfont_measuretext(xFont_t * pft, const xwchar_t * pwszText, xuint32_t nChars, xuint16_t nMaxWidth, xuint32_t * pnFits);
 
 /**
  * @brief 准备绘图上下文
@@ -122,7 +118,7 @@ void xfont_drawbegin(xFont_t * pft, xImage* pimg);
  * @param[in] r,g,b - 绘制字体颜色
  * @return 无
 */
-void xfont_drawtext2(xFont_t * pft, xint16_t x, xint16_t y, const wchar * pwszText, xuint8_t r, xuint8_t g, xuint8_t b);
+void xfont_drawtext2(xFont_t * pft, xint16_t x, xint16_t y, const xwchar_t * pwszText, xuint8_t r, xuint8_t g, xuint8_t b);
 
 /**
  * @brief 释放绘图上下文

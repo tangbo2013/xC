@@ -1,29 +1,26 @@
 /**
- * 通用平台系统API
- * Copyright (c) 2011 Tiros.
- * @file debug.h
+ * xC
+ * @file xdebug.h
  * @brief 代码调试
- * @author baigb <baigb@tiros.com.cn>
- * @date 2011/09/16
- * @note 不要直接调用tr_函数,应该调用对应的宏定义
+ * @author yangxq <yangxq@tiros.com.cn>
+ * @date 2014/03/13
  * @par 修改记录
- * @par 修改命名规则 杨小茜 2014/03/12
  */
 
-#ifndef _DEBUG_H_
-#define _DEBUG_H_
+#ifndef _XDEBUG_H_
+#define _XDEBUG_H_
 
 #include "./xboolean.h"
 
-#ifdef XNDEBUG
+#ifdef 	NDEBUG
 
-#define assert(exp)
-#define dbgprintf(format, ...)
+#define XASSERT(exp)
+#define XDBGPRINTF(format, ...)
 
 #else
 
-#define assert(exp)  	xdbg_assert(exp)
-#define dbgprintf      	xdbg_printf
+#define XASSERT(exp) xdebug_assert(exp)
+#define XDBGPRINTF xdebug_printf
 
 #ifdef __cplusplus
 extern "C" {
@@ -48,7 +45,7 @@ void xdbg_printf(const char * format, ...);
 }
 #endif
 
-#endif /* XNDEBUG */
+#endif /* NDEBUG */
 
 #endif /* _XDEBUG_H_ */
 
